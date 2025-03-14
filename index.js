@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", (fn) => {
+    let bodyElem = document.querySelector("body")
     let enterElem = document.querySelector(".enter")
     let mainElem = document.querySelector(".hidden");
 
@@ -25,16 +26,35 @@ document.addEventListener("DOMContentLoaded", (fn) => {
                 enterElem.remove();
                 mainElem.classList.remove('hidden');
                 mainElem.classList.add('main-container');
-                setTimeout (y => {
-                    animate ()
-
-                }, 2000)
+                downloadOption()
             },2000)
 
         }, 2000)        
 
     } catch (error) {
       console.error(error.message);
+    }
+  }
+
+
+  function downloadOption () {
+    let value = undefined;
+    let height = '';
+    document.addEventListener('scroll', fn => {
+      if (scrollY > 600) {
+        value = scrollY;
+      }
+      console.log(scrollY, value)
+        console.log(height = window.outerHeight * window.innerHeight);
+    })
+    if (value =! undefined) {
+        let elem = document.createElement('div');
+        bodyElem.appendChild(elem);
+        elem.style = `position:absolute; z-index:10; background:white; top: 250px`
+        elem.innerHTML = `
+        <div> Download </div>
+        `        
+        console.log(scrollY)
     }
   }
 

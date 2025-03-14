@@ -21,6 +21,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background: var(--dark-color);
+  font-style: normal;
 }
 .main-container {
   display: flex;
