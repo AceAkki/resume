@@ -240,26 +240,17 @@
  
 
     <script>
-  document.getElementById('downloadBtn').addEventListener('click', function () {
-            // Create a new jsPDF instance
+  async function generatePDF() {
             const { jsPDF } = window.jspdf;
-            const pdf = new jsPDF();
-
-            // Get the HTML content you want to convert
             const content = document.getElementById('content');
+            const canvas = await html2canvas(content);
+            const imgData = canvas.toDataURL('image/png');
 
-            // Use jsPDF's html method to render the HTML to PDF
-            pdf.html(content, {
-                margin: [20, 20, 20, 20], // top, left, bottom, right margins (all in points)
-                callback: function (doc) {
-                    // Save the PDF once it's rendered
-                    doc.save('Akshay_Resume.pdf');
-                },
-                x: 20,  // starting X position
-                y: 20   // starting Y position
-            });
-        });
-    </script>
+            const pdf = new jsPDF();
+            pdf.addImage(imgData, 'PNG', 10, 10, 180, 0);
+            pdf.save("document.pdf");
+        }
+      </script>
 </body>
 
 </html>
