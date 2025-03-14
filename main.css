@@ -1,0 +1,148 @@
+
+
+:root {
+    --background-color: #F4F4F9;
+    --text-color: #333333;
+    --heading-color: #2C3E50;
+
+    --link-color: #00A7E1;
+    --link-hover-color: #1ABC9C;
+
+    --button-bg-color: #27AE60;
+    --button-hover-bg-color: #2ECC71;
+
+    --border-color: #BDC3C7;
+    --divider-color: #3498DB;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    width: 70%;
+    background: var(--background-color);
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    margin: 1%;
+}
+
+.divider {
+    background-color: var(--divider-color);
+    height: 1px;
+}
+
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+.title {
+    color: var(--heading-color);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.sub-title {
+    color: var(--heading-color);
+    font-size: 30px;
+    font-weight: 500;
+}
+
+
+.contact-wrap {
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+}
+
+.option {
+    display: flex;
+    padding: 5px;
+    gap: 12px;
+}
+
+.option h5 {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.option .icon  i {
+    font-size: 20px;
+    color: var(--background-color);
+    background-color: var(--heading-color);
+    padding: 5px;
+    border-radius: 100%;
+}
+
+.option:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+.main-body {
+    display: grid;
+    grid-template-columns: 28% 68%;
+    gap: 4%;
+    margin: 2% 4%;
+}
+
+.main-body .section-head {
+    font-weight: 600;
+    font-size: 22px;
+    margin: 5px 0 10px;
+}
+
+.main-body h4 {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.column-small, .column-big {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.work {
+    margin: 10px 0;
+}
+
+.workplace {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.tech-skills {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill i {
+    font-size: 25px;
+}
+
+.skill h4 {
+    font-weight: 400;
+}
