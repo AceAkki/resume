@@ -1,41 +1,5 @@
 document.addEventListener("DOMContentLoaded", (fn) => {
-    let bodyElem = document.querySelector("body")
-    let enterElem = document.querySelector(".enter")
-    let mainElem = document.querySelector(".hidden");
-
-  getScreen();
-  
-  async function getScreen() {
-    const url = "pop.html";
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-      }
-
-      const json = await response.text();
-      //console.log(json);
-      
-      enterElem.innerHTML = json;
-
-      let sub = document.querySelector('p, .subtitle');
-      setTimeout(fn => {        
-            sub.textContent = `Redirecting Now..`;
-            
-            setTimeout(nFn => {
-                enterElem.remove();
-                mainElem.classList.remove('hidden');
-                mainElem.classList.add('main-container');
-                downloadOption()
-            },2000)
-
-        }, 2000)        
-
-    } catch (error) {
-      console.error(error.message);
-    }
-  }
-
+  console.log(400000 / 12)
 
   function downloadOption () {
     let value = undefined;
