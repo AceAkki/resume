@@ -1,39 +1,71 @@
 document.addEventListener("DOMContentLoaded", (fn) => {
-  console.log(400000 / 12)
+  console.log(400000 / 12);
 
-  function downloadOption () {
+  let mainElem = document.querySelector(".main-container");
+  let todayDate = new Date().toISOString().split('T')[0];
+  console.log(todayDate)
+
+
+  setTimeout((fn) => {
+    let createElem = document.createElement("div");
+    createElem.classList.add("pop-up-container");
+    let createElm = document.createElement("div");
+    createElm.classList.add("download-wrap");
+
+    let creatdiv = document.createElement("div");
+    let creatdivT = document.createElement("div");
+    let createH4 = document.createElement("h4");
+    let creatI = document.createElement("i");
+    creatI.classList.add("ph", "ph-file-arrow-down");
+    createH4.textContent = "Download Resume";
+
+    mainElem.appendChild(createElem);
+    createElem.appendChild(createElm);
+    createElm.appendChild(creatdiv);
+    createElm.appendChild(creatdivT);
+    creatdiv.appendChild(createH4);
+    creatdivT.appendChild(creatI);
+
+    
+    createElem.addEventListener("click", (fn) => {
+      const downloadLink = document.createElement("a");
+      downloadLink.href = 'res/resume-2025.pdf';
+      downloadLink.download = `Akshay-P-Resume-${todayDate}.pdf`;
+      downloadLink.click();      
+    });
+  }, 5000);
+
+  function downloadOption() {
     let value = undefined;
-    let height = '';
-    document.addEventListener('scroll', fn => {
+    let height = "";
+    document.addEventListener("scroll", (fn) => {
       if (scrollY > 600) {
         value = scrollY;
       }
-      console.log(scrollY, value)
-        console.log(height = window.outerHeight * window.innerHeight);
-    })
-    if (value =! undefined) {
-        let elem = document.createElement('div');
-        bodyElem.appendChild(elem);
-        elem.style = `position:absolute; z-index:10; background:white; top: 250px`
-        elem.innerHTML = `
+      console.log(scrollY, value);
+      console.log((height = window.outerHeight * window.innerHeight));
+    });
+    if ((value = !undefined)) {
+      let elem = document.createElement("div");
+      bodyElem.appendChild(elem);
+      elem.style = `position:absolute; z-index:10; background:white; top: 250px`;
+      elem.innerHTML = `
         <div> Download </div>
-        `        
-        console.log(scrollY)
+        `;
+      console.log(scrollY);
     }
   }
 
-  function animate () {
-      anime({
-        targets: mainElem,
-        translateX: 250,
-        duration: 3000,
-        loop: true,
-        easing: 'easeInOutQuad'
-      });
-      console.log('anime')
-
+  function animate() {
+    anime({
+      targets: createElem,
+      translateX: 250,
+      duration: 3000,
+      loop: true,
+      easing: "easeInOutQuad",
+    });
+    console.log("anime");
   }
-
 });
 function exportasWORD() {
   var header =
