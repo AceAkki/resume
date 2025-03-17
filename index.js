@@ -35,7 +35,10 @@ document.addEventListener("DOMContentLoaded", (fn) => {
         downloadLink.href = 'res/resume-2025.pdf';
       }
       downloadLink.download = `Akshay-P-Resume-${todayDate}.pdf`;
-      downloadLink.click();      
+  document.body.appendChild(downloadLink); 
+  downloadLink.click();  // Trigger the download
+  document.body.removeChild(downloadLink);       
+      
     });
   }, 5000);
 
