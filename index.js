@@ -26,10 +26,16 @@ document.addEventListener("DOMContentLoaded", (fn) => {
     creatdiv.appendChild(createH4);
     creatdivT.appendChild(creatI);
 
-    
+    //https://github.com/AceAkki/resume/blob/b085e04e0dbeb4294c8832a66bf06a955ff246c2/res/Resume-2025.pdf
+    // https://github.com/AceAkki/resume/blob/main/res/Resume-2025.pdf
     createElem.addEventListener("click", (fn) => {
       const downloadLink = document.createElement("a");
-      downloadLink.href = 'res/resume-2025.pdf';
+      if (window.href.includes("github") {
+        downloadLink.href = 'https://github.com/AceAkki/resume/blob/b085e04e0dbeb4294c8832a66bf06a955ff246c2/res/Resume-2025.pdf';
+      } else {
+        downloadLink.href = 'res/resume-2025.pdf';
+      }
+      
       downloadLink.download = `Akshay-P-Resume-${todayDate}.pdf`;
       downloadLink.click();      
     });
