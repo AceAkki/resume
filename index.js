@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", (fn) => {
     createElem.addEventListener("click", (fn) => {
       const downloadLink = document.createElement("a");
       if (window.href.includes("github") {
-        downloadLink.href = 'https://github.com/AceAkki/resume/blob/b085e04e0dbeb4294c8832a66bf06a955ff246c2/res/Resume-2025.pdf';
+        downloadLink.href = 'https://github.com/AceAkki/resume/raw/81c76b748bc28a96c756900c3c587a12b8df90ac/res/Resume-2025.pdf';
       } else {
         downloadLink.href = 'res/resume-2025.pdf';
       }
