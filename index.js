@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", (fn) => {
       const downloadLink = document.createElement("a");
       if (window.href.includes("github") {
         downloadLink.href = 'https://github.com/AceAkki/resume/raw/81c76b748bc28a96c756900c3c587a12b8df90ac/res/Resume-2025.pdf';
-       consolw.log("copied")
+       console.log("copied")
       } else {
         downloadLink.href = 'res/resume-2025.pdf';
       }
