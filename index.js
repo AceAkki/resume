@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", (fn) => {
     // https://github.com/AceAkki/resume/blob/main/res/Resume-2025.pdf
     createElem.addEventListener("click", (fn) => {
       const downloadLink = document.createElement("a");
-      if (window.href.includes("github") {
+      if (window.location.href.includes("github") {
         downloadLink.href = 'https://github.com/AceAkki/resume/raw/81c76b748bc28a96c756900c3c587a12b8df90ac/res/Resume-2025.pdf';
        console.log("copied")
       } else {
