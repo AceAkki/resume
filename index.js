@@ -29,16 +29,24 @@ document.addEventListener("DOMContentLoaded", (fn) => {
     
     createElem.addEventListener("click", (fn) => {
       const downloadLink = document.createElement("a");
+
+      let fileUrl;
       if (window.location.href.includes('github')) {
-        downloadLink.href = 'https://raw.githubusercontent.com/AceAkki/resume/main/res/Resume-2025.pdf';
+        fileUrl = 'https://raw.githubusercontent.com/AceAkki/resume/main/res/Resume-2025.pdf';
       } else {
-        downloadLink.href = 'res/resume-2025.pdf';
+        fileUrl = 'res/resume-2025.pdf';
       }
-      downloadLink.download = `Akshay-P-Resume-${todayDate}.pdf`;
-  document.body.appendChild(downloadLink); 
-  downloadLink.click();  // Trigger the download
-  document.body.removeChild(downloadLink);       
-      
+
+      fetch(fileUrl)
+      .then((response) => response.blob())
+      .then((blob) => {
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = `Akshay-P-Resume-${todayDate}.pdf`;
+        downloadLink.click();      
+      })
+      .catch((error) => {
+          console.error('Download Failer', error)
+      })
     });
   }, 5000);
 
