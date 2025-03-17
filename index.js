@@ -48,38 +48,35 @@ document.addEventListener("DOMContentLoaded", (fn) => {
           console.error('Download Failer', error)
       })
     });
+
+    document.addEventListener('click', fn => {
+      animate()
+    })
+
+    
   }, 5000);
 
-  function downloadOption() {
-    let value = undefined;
-    let height = "";
-    document.addEventListener("scroll", (fn) => {
-      if (scrollY > 600) {
-        value = scrollY;
-      }
-      console.log(scrollY, value);
-      console.log((height = window.outerHeight * window.innerHeight));
-    });
-    if ((value = !undefined)) {
-      let elem = document.createElement("div");
-      bodyElem.appendChild(elem);
-      elem.style = `position:absolute; z-index:10; background:white; top: 250px`;
-      elem.innerHTML = `
-        <div> Download </div>
-        `;
-      console.log(scrollY);
-    }
-  }
-
   function animate() {
-    anime({
-      targets: createElem,
-      translateX: 250,
-      duration: 3000,
-      loop: true,
-      easing: "easeInOutQuad",
-    });
-    console.log("anime");
+    let elem = document.querySelector( ".pop-up-container")
+
+    if (elem) {
+      anime({
+        targets:elem,
+        opacity:0,
+        translateY: 250,
+        duration: 3000,
+        loop: true,
+        easing: "easeInOutQuad",
+        complete: function() {
+          elem.remove();
+        }
+      });
+      setTimeout(time => {
+        elem.remove()
+
+      }, 3000)
+      console.log("anime");
+    } 
   }
 });
 function exportasWORD() {

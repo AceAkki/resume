@@ -93,6 +93,10 @@ body {
   font-size: 16px;
 }
 
+.option a {
+  color: var(--heading-color);
+}
+
 .option .icon i {
   font-size: 20px;
   color: var(--background-color);
