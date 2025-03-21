@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", (fn) => {
 
 
   setTimeout((fn) => {
+    let blackOverlay = document.createElement("div");
+    blackOverlay.classList.add("black-overlay");
     let createElem = document.createElement("div");
     createElem.classList.add("pop-up-container");
     let createElm = document.createElement("div");
@@ -19,6 +21,7 @@ document.addEventListener("DOMContentLoaded", (fn) => {
     creatI.classList.add("ph", "ph-file-arrow-down");
     createH4.textContent = "Download Resume";
 
+    mainElem.appendChild(blackOverlay);
     mainElem.appendChild(createElem);
     createElem.appendChild(createElm);
     createElm.appendChild(creatdiv);
@@ -51,6 +54,7 @@ document.addEventListener("DOMContentLoaded", (fn) => {
 
     document.addEventListener('click', fn => {
       animate()
+      blackOverlay.remove();
     })
 
     
@@ -78,6 +82,7 @@ document.addEventListener("DOMContentLoaded", (fn) => {
       console.log("anime");
     } 
   }
+
 });
 function exportasWORD() {
   var header =
