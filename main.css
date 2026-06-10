@@ -112,7 +112,7 @@ body {
 
 .main-body {
   display: grid;
-  grid-template-columns: 28% 68%;
+  /* grid-template-columns: 28% 68%; */
   gap: 4%;
   margin: 2% 4%;
 }
@@ -165,7 +165,7 @@ body {
 }
 
 .pop-up-container {
-  display: flex;  
+  display: flex;
   margin: 10px;
   height: 10vh;
   justify-content: center;
@@ -207,13 +207,12 @@ body {
   z-index: 2;
 }
 
-@media screen and (min-width:1280px) {
+@media screen and (min-width: 1280px) {
   .pop-up-container {
     width: 20vw;
     left: 40vw;
   }
 }
-
 
 @media all and (max-width: 1080px) {
   .content {
