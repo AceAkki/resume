@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", (fn) => {
   console.log(400000 / 12);
 
   let mainElem = document.querySelector(".main-container");
-  let todayDate = new Date().toISOString().split('T')[0];
-  console.log(todayDate)
-
+  let todayDate = new Date().toISOString().split("T")[0];
+  console.log(todayDate);
 
   setTimeout((fn) => {
     let blackOverlay = document.createElement("div");
@@ -29,60 +28,56 @@ document.addEventListener("DOMContentLoaded", (fn) => {
     creatdiv.appendChild(createH4);
     creatdivT.appendChild(creatI);
 
-    
     createElem.addEventListener("click", (fn) => {
       const downloadLink = document.createElement("a");
 
       let fileUrl;
-      if (window.location.href.includes('github')) {
-        fileUrl = 'https://raw.githubusercontent.com/AceAkki/resume/main/res/Resume-2025.pdf';
+      if (window.location.href.includes("github")) {
+        fileUrl =
+          "https://raw.githubusercontent.com/AceAkki/resume/main/res/Resume-2025.pdf";
       } else {
-        fileUrl = 'res/resume-2025.pdf';
+        fileUrl = "res/resume-2025.pdf";
       }
 
       fetch(fileUrl)
-      .then((response) => response.blob())
-      .then((blob) => {
-        downloadLink.href = URL.createObjectURL(blob);
-        downloadLink.download = `Akshay-P-Resume-${todayDate}.pdf`;
-        downloadLink.click();      
-      })
-      .catch((error) => {
-          console.error('Download Failer', error)
-      })
+        .then((response) => response.blob())
+        .then((blob) => {
+          downloadLink.href = URL.createObjectURL(blob);
+          downloadLink.download = `Akshay-P-Resume-${todayDate}.pdf`;
+          downloadLink.click();
+        })
+        .catch((error) => {
+          console.error("Download Failer", error);
+        });
     });
 
-    document.addEventListener('click', fn => {
-      animate()
+    document.addEventListener("click", (fn) => {
+      animate();
       blackOverlay.remove();
-    })
-
-    
-  }, 5000);
+    });
+  }, 15000);
 
   function animate() {
-    let elem = document.querySelector( ".pop-up-container")
+    let elem = document.querySelector(".pop-up-container");
 
     if (elem) {
       anime({
-        targets:elem,
-        opacity:0,
+        targets: elem,
+        opacity: 0,
         translateY: 250,
         duration: 3000,
         loop: true,
         easing: "easeInOutQuad",
-        complete: function() {
+        complete: function () {
           elem.remove();
-        }
+        },
       });
-      setTimeout(time => {
-        elem.remove()
-
-      }, 3000)
+      setTimeout((time) => {
+        elem.remove();
+      }, 3000);
       console.log("anime");
-    } 
+    }
   }
-
 });
 function exportasWORD() {
   var header =
