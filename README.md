@@ -1,4 +1,4 @@
-# My Resume - 2025
+# My Resume - 2026
 
 A responsive, interactive resume built with HTML, CSS, and JavaScript.
 
