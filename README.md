@@ -1,6 +1,6 @@
 # My Resume - 2026
 
-A responsive, interactive resume built with HTML, CSS, and JavaScript.
+A responsive, interactive resume built with HTML, CSS, and Vanilla JavaScript.
 
 ## Overview
 
