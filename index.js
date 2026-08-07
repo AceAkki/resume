@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", (fn) => {
-  console.log(40000)
+  
   let mainElem = document.querySelector(".main-container");
   let todayDate = new Date().toISOString().split("T")[0];
   setTimeout((fn) => {
