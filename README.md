@@ -2,6 +2,7 @@
 
 A responsive, interactive resume built with HTML, CSS, and Vanilla JavaScript.
 
+
 ## Overview
 
 This is a personal resume website showcasing my professional experience, skills, projects, and contact information. The site is designed to be clean, modern, and fully responsive across all devices.
