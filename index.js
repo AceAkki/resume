@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", (fn) => {
   let mainElem = document.querySelector(".main-container");
   let todayDate = new Date().toISOString().split("T")[0];
- // console.log(todayDate) 
+  console.log(todayDate) 
   
   setTimeout((fn) => {
     let blackOverlay = document.createElement("div");
